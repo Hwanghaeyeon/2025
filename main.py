@@ -197,4 +197,40 @@ if filtered_snacks:
             st.markdown("</div>", unsafe_allow_html=True)
 else:
     st.warning("조건에 맞는 간식을 찾지 못했어요 😢")
+    
+# --------------------
+# 입력창
+# --------------------
+col1, col2 = st.columns(2)
+with col1:
+    snack_type = st.selectbox("🍩 간식 종류", ["전체"] + sorted(list(set([s["종류"] for s in snack_data]))))
+with col2:
+    taste_pref = st.text_input("🍯 원하는 조건 (쉼표로 구분, 예: 달콤, 바삭바삭, 초코맛)")
+
+# --------------------
+# 필터링 + 인기순 정렬
+# --------------------
+filtered_snacks = []
+
+# 키워드 리스트 만들기 (소문자 변환 + 공백 제거)
+keywords = [k.strip() for k in taste_pref.split(",") if k.strip()]
+
+for snack in snack_data:
+    if snack_type != "전체" and snack["종류"] != snack_type:
+        continue
+
+    # 간식 속성 전부 하나의 문자열로 합침
+    snack_text = (
+        snack["이름"] + " " +
+        snack["종류"] + " " +
+        snack["식감"] + " " +
+        snack["분위기"] + " " +
+        " ".join(snack["맛"].keys())
+    )
+
+    # 모든 키워드가 포함되어야 함
+    if all(k in snack_text for k in keywords):
+        filtered_snacks.append(snack)
+
+filtered_snacks = sorted(filtered_snacks, key=lambda x: x["인기점수"], reverse=True)
 
