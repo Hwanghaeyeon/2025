@@ -72,3 +72,24 @@ st.image(image_url, width=300)
 st.markdown(f'<div class="quote-text">“{quote}”</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
+import streamlit as st
+import random
+
+# 명언과 관련 이미지 매핑
+quotes_with_images = [
+    ("하루하루가 새로운 기회다.", "https://source.unsplash.com/400x400/?sunrise"),
+    ("작은 걸음도 멈추지 않으면 큰 길이 된다.", "https://source.unsplash.com/400x400/?path"),
+    ("할 수 있다고 믿는 순간, 이미 반은 이룬 것이다.", "https://source.unsplash.com/400x400/?mountain"),
+    ("오늘은 어제보다 더 빛날 수 있다.", "https://source.unsplash.com/400x400/?sun"),
+    ("포기하지 않는 사람에게는 언제나 길이 있다.", "https://source.unsplash.com/400x400/?road")
+]
+
+# 페이지 기본 설정
+st.set_page_config(page_title="오늘의 명언", page_icon="☀️", layout="centered")
+
+# 배경 색상 & 분위기 CSS
+page_bg = """
+<style>
+.stApp {
+    background-color: #eaffd0; /* 연두색 배경 */
+    background-image: linear-gradient(to top, #eaffd0,
