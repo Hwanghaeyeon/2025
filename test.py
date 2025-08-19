@@ -90,3 +90,39 @@ st.markdown('<div class="quote-box">', unsafe_allow_html=True)
 st.image(st.session_state["current_image"], width=300)
 st.markdown(f'<div class="quote-text">“{st.session_state["current_quote"]}”</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
+
+import streamlit as st
+import random
+import time
+
+# 명언과 관련 이미지 매핑 (랜덤 시그널 추가)
+def get_image_url(query: str) -> str:
+    return f"https://source.unsplash.com/400x400/?{query}&sig={int(time.time()*1000)}"
+
+quotes_with_images = [
+    ("하루하루가 새로운 기회다.", get_image_url("sunrise")),
+    ("작은 걸음도 멈추지 않으면 큰 길이 된다.", get_image_url("path")),
+    ("할 수 있다고 믿는 순간, 이미 반은 이룬 것이다.", get_image_url("mountain")),
+    ("오늘은 어제보다 더 빛날 수 있다.", get_image_url("sun")),
+    ("포기하지 않는 사람에게는 언제나 길이 있다.", get_image_url("road"))
+]
+
+# 페이지 기본 설정
+st.set_page_config(page_title="오늘의 명언", page_icon="☀️", layout="centered")
+
+# ... (CSS 부분은 그대로 유지)
+
+# 세션 상태에 현재 명언 저장
+if "current_quote" not in st.session_state:
+    st.session_state["current_quote"], st.session_state["current_image"] = random.choice(quotes_with_images)
+
+# 버튼: 새로운 명언
+if st.button("새로운 명언 보기 ✨"):
+    st.session_state["current_quote"], st.session_state["current_image"] = random.choice(quotes_with_images)
+
+# 명언 박스 중앙 표시
+st.markdown('<div class="quote-box">', unsafe_allow_html=True)
+st.image(st.session_state["current_image"], width=300)
+st.markdown(f'<div class="quote-text">“{st.session_state["current_quote"]}”</div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
