@@ -1,42 +1,55 @@
 import streamlit as st
 import random
 
-# 명언과 귀여운 초원 느낌 일러스트 이미지 매핑
+# 명언과 귀여운 일러스트 이미지 매핑 (정사각형)
 quotes_with_images = [
-    ("하루하루가 새로운 기회다.", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=crop&h=400&w=400"),
-    ("작은 걸음도 멈추지 않으면 큰 길이 된다.", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?crop=entropy&cs=tinysrgb&fit=crop&h=400&w=400"),
-    ("할 수 있다고 믿는 순간, 이미 반은 이룬 것이다.", "https://images.unsplash.com/photo-1465146633010-9d27e5f7d1b1?crop=entropy&cs=tinysrgb&fit=crop&h=400&w=400"),
-    ("오늘은 어제보다 더 빛날 수 있다.", "https://images.unsplash.com/photo-1502082553048-f009c37129b9?crop=entropy&cs=tinysrgb&fit=crop&h=400&w=400"),
-    ("포기하지 않는 사람에게는 언제나 길이 있다.", "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?crop=entropy&cs=tinysrgb&fit=crop&h=400&w=400"),
-    ("작은 성취도 쌓이면 큰 기적이 된다.", "https://images.unsplash.com/photo-1493244040629-496f6d136cc3?crop=entropy&cs=tinysrgb&fit=crop&h=400&w=400")
+    ("하루하루가 새로운 기회다.", "https://i.ibb.co/0mK7rhM/sunrise-illustration.png"),
+    ("작은 걸음도 멈추지 않으면 큰 길이 된다.", "https://i.ibb.co/z7Rhz1y/path-illustration.png"),
+    ("할 수 있다고 믿는 순간, 이미 반은 이룬 것이다.", "https://i.ibb.co/NTpgBGB/mountain-illustration.png"),
+    ("오늘은 어제보다 더 빛날 수 있다.", "https://i.ibb.co/DpD7cfX/sun-illustration.png"),
+    ("포기하지 않는 사람에게는 언제나 길이 있다.", "https://i.ibb.co/nPs0ng0/road-illustration.png"),
+    ("작은 성취도 쌓이면 큰 기적이 된다.", "https://i.ibb.co/8YjcJNt/grass-illustration.png")
 ]
 
 # 페이지 기본 설정
 st.set_page_config(page_title="오늘의 명언", page_icon="☀️", layout="centered")
 
-# CSS: 연두색 + 초원 느낌 + 명언 박스 + 글씨체
+# CSS: 연두색 + 초원 느낌 + 중앙 배치 + 흰 줄 제거 + 글씨체
 page_bg = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Quicksand:wght@500&display=swap');
 
-.stApp {
-    background-color: #eaffd0; /* 연한 연두색 */
-    background-image: linear-gradient(to top, #eaffd0, #f0fff0); /* 초원의 포근한 느낌 */
+html, body, .stApp {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(to top, #eaffd0, #f0fff0);
     font-family: 'Quicksand', 'Jua', sans-serif;
 }
+
+.block-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
 .quote-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.85); /* 살짝 투명한 흰 배경 */
+    background-color: transparent; /* 흰 박스 제거 */
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     width: 400px;
     text-align: center;
     margin: auto;
 }
+
 .quote-text {
     font-size: 22px;
     font-weight: bold;
@@ -44,6 +57,7 @@ page_bg = """
     margin-top: 15px;
     font-family: 'Jua', sans-serif;
 }
+
 .title {
     font-size: 34px;
     font-weight: bold;
@@ -52,6 +66,7 @@ page_bg = """
     margin-bottom: 30px;
     font-family: 'Quicksand', sans-serif;
 }
+
 div.stButton > button:first-child {
     background-color: #aee1a3;
     color: #2f4f2f;
@@ -89,3 +104,4 @@ st.markdown('<div class="quote-box">', unsafe_allow_html=True)
 st.image(st.session_state["current_image"], width=300)
 st.markdown(f'<div class="quote-text">“{st.session_state["current_quote"]}”</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
+
