@@ -12,11 +12,15 @@ QUOTES_WITH_IMAGES = [
     ("오늘은 어제보다 더 빛날 수 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f31e.png"),  # 🌞 sun
     ("포기하지 않는 사람에게는 언제나 길이 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f6e3.png"),  # 🛣️ road
     ("작은 성취도 쌓이면 큰 기적이 된다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f331.png"),  # 🌱 seedling
-    # 추가된 4개의 명언과 이미지
     ("새로운 도전은 나를 성장하게 한다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f3c3.png"),  # 🏃 running
     ("행복은 늘 가까이에 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f33c.png"),  # 🌼 blossom
     ("매일 조금씩 나아가는 것이 중요하다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f34f.png"),  # 🍏 green apple
-    ("마음을 열면 세상이 더 밝게 보인다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f31f.png")   # 🌟 glowing star
+    ("마음을 열면 세상이 더 밝게 보인다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f31f.png"),  # 🌟 star
+    # 새롭게 추가: 하루를 힘차게, 행복하게
+    ("오늘의 작은 행복을 놓치지 마세요.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f338.png"),  # 🌸 cherry blossom
+    ("웃음은 하루를 밝게 만드는 최고의 약이다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f600.png"),  # 😀 grinning face
+    ("긍정적인 마음이 좋은 하루를 만든다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f331.png"),  # 🌱 seedling
+    ("매일의 시작은 새로운 가능성으로 가득 차 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f305.png")   # 🌅 sunrise
 ]
 
 # 페이지 설정
