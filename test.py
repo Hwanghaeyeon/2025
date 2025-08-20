@@ -16,11 +16,15 @@ QUOTES_WITH_IMAGES = [
     ("행복은 늘 가까이에 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f33c.png"),  # 🌼 blossom
     ("매일 조금씩 나아가는 것이 중요하다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f34f.png"),  # 🍏 green apple
     ("마음을 열면 세상이 더 밝게 보인다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f31f.png"),  # 🌟 star
-    # 새롭게 추가: 하루를 힘차게, 행복하게
     ("오늘의 작은 행복을 놓치지 마세요.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f338.png"),  # 🌸 cherry blossom
     ("웃음은 하루를 밝게 만드는 최고의 약이다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f600.png"),  # 😀 grinning face
     ("긍정적인 마음이 좋은 하루를 만든다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f331.png"),  # 🌱 seedling
-    ("매일의 시작은 새로운 가능성으로 가득 차 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f305.png")   # 🌅 sunrise
+    ("매일의 시작은 새로운 가능성으로 가득 차 있다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f305.png"),  # 🌅 sunrise
+    # 새롭게 추가: 학생과 어른 모두에게 힘이 되는 명언
+    ("삶의 경험은 최고의 스승이다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f3de.png"),  # 🌿 national park
+    ("작은 친절이 세상을 바꾼다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f49c.png"),  # 💜 purple heart
+    ("포기하지 않는 마음이 모든 문을 연다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f3d6.png"),  # 🏖️ beach with umbrella
+    ("오늘의 노력은 내일의 자부심이 된다.", "https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f31f.png")   # 🌟 star
 ]
 
 # 페이지 설정
