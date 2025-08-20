@@ -80,3 +80,20 @@ if st.button("새로운 명언 보기 ✨"):
     st.session_state.idx = random.randrange(len(QUOTES_WITH_IMAGES))
 
 st.markdown('</div>', unsafe_allow_html=True)
+# 페이지 제목 (로고 느낌)
+st.markdown("""
+    <div class="app-title">
+        ☀️ 오늘의 명언 ☁️
+    </div>
+""", unsafe_allow_html=True)
+
+# CSS 안에 추가
+.page-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #2f5d2f;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
