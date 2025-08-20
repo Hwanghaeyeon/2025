@@ -1,20 +1,20 @@
 import streamlit as st
 import random
 
-# 명언과 귀여운 일러스트 이미지 매핑 (정사각형)
+# 명언과 귀여운 일러스트 느낌 이미지 (Unsplash - illustration 태그)
 quotes_with_images = [
-    ("하루하루가 새로운 기회다.", "https://i.ibb.co/0mK7rhM/sunrise-illustration.png"),
-    ("작은 걸음도 멈추지 않으면 큰 길이 된다.", "https://i.ibb.co/z7Rhz1y/path-illustration.png"),
-    ("할 수 있다고 믿는 순간, 이미 반은 이룬 것이다.", "https://i.ibb.co/NTpgBGB/mountain-illustration.png"),
-    ("오늘은 어제보다 더 빛날 수 있다.", "https://i.ibb.co/DpD7cfX/sun-illustration.png"),
-    ("포기하지 않는 사람에게는 언제나 길이 있다.", "https://i.ibb.co/nPs0ng0/road-illustration.png"),
-    ("작은 성취도 쌓이면 큰 기적이 된다.", "https://i.ibb.co/8YjcJNt/grass-illustration.png")
+    ("하루하루가 새로운 기회다.", "https://source.unsplash.com/400x400/?sunrise,illustration,cute"),
+    ("작은 걸음도 멈추지 않으면 큰 길이 된다.", "https://source.unsplash.com/400x400/?path,illustration,cute"),
+    ("할 수 있다고 믿는 순간, 이미 반은 이룬 것이다.", "https://source.unsplash.com/400x400/?mountain,illustration,cute"),
+    ("오늘은 어제보다 더 빛날 수 있다.", "https://source.unsplash.com/400x400/?sun,illustration,cute"),
+    ("포기하지 않는 사람에게는 언제나 길이 있다.", "https://source.unsplash.com/400x400/?road,illustration,cute"),
+    ("작은 성취도 쌓이면 큰 기적이 된다.", "https://source.unsplash.com/400x400/?grass,illustration,cute")
 ]
 
 # 페이지 기본 설정
 st.set_page_config(page_title="오늘의 명언", page_icon="☀️", layout="centered")
 
-# CSS: 연두색 + 초원 느낌 + 중앙 배치 + 흰 줄 제거 + 글씨체
+# CSS: 연두색 + 초원 느낌 + 귀여운 이모티콘 패턴
 page_bg = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Quicksand:wght@500&display=swap');
@@ -23,7 +23,12 @@ html, body, .stApp {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: linear-gradient(to top, #eaffd0, #f0fff0);
+    background: linear-gradient(to top, #eaffd0, #fafff0);
+    background-image: url('https://emojicdn.elk.sh/☁️'), 
+                      url('https://emojicdn.elk.sh/🌱'), 
+                      url('https://emojicdn.elk.sh/☀️');
+    background-repeat: repeat;
+    background-size: 80px 80px;
     font-family: 'Quicksand', 'Jua', sans-serif;
 }
 
@@ -42,12 +47,13 @@ html, body, .stApp {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: transparent; /* 흰 박스 제거 */
+    background-color: rgba(255,255,255,0.6);
     border-radius: 20px;
     padding: 20px;
     width: 400px;
     text-align: center;
     margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .quote-text {
@@ -100,8 +106,5 @@ if st.button("새로운 명언 보기 ✨"):
     st.session_state["current_quote"], st.session_state["current_image"] = random.choice(quotes_with_images)
 
 # 명언 박스 중앙 표시
-st.markdown('<div class="quote-box">', unsafe_allow_html=True)
-st.image(st.session_state["current_image"], width=300)
-st.markdown(f'<div class="quote-text">“{st.session_state["current_quote"]}”</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('<div cla
 
